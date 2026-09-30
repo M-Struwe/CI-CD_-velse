@@ -7,4 +7,4 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: "cicdvelse"
-  GITHUB_ACTOR: ""
+  GITHUB_ACTOR: "m-struwe"
