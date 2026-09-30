@@ -1,0 +1,5 @@
+name: CD - CICD
+
+on:
+  push:
+    branches: []
