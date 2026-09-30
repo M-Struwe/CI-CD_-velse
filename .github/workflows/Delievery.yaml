@@ -2,4 +2,9 @@ name: CD - CICD
 
 on:
   push:
-    branches: []
+    branches: ["master"]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: "cicdvelse"
+  GITHUB_ACTOR: ""
