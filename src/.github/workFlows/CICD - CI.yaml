@@ -35,12 +35,19 @@ jobs:
   - name: Setup .NET
     uses: actions/setup-dotnet@v5
     with:
-    dotnet-version: ${{ env.DOTNET_VERSION }}# Restore dependencies and nuget packets for the solution
+    dotnet-version: ${{ env.DOTNET_VERSION }}
+    # Restore dependencies and nuget packets for the solution
   - name: Restore Dependencies
     run: dotnet restore ${{ env.SOLUTION_PATH }}
 # Build the solution without restoring dependencies (restored in the previous step)
   - name: Build Solution
-    run: dotnet build ${{ env.SOLUTION_PATH }} --configuration Release --no-restore
+    run: dotnet build ${{ env.SOLUTION_PATH }} 
+     --configuration Release 
+     --no-restore
 # Run the tests in the solution without restoring dependencies or building (both done in previous steps)
   - name: Run Tests
-    run: dotnet test ${{ env.SOLUTION_PATH }}--configuration Release--no-restore--no-build--verbosity normal
+    run: dotnet test ${{ env.SOLUTION_PATH }}
+     --configuration Release
+     --no-restore
+     --no-build
+     --verbosity normal
